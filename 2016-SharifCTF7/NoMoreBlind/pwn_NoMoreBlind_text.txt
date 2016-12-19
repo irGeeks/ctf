@@ -1,0 +1,112 @@
+ # plt
+ 8048410:	ff 25 60 99 04 08    	jmp    DWORD PTR ds:	
+ 8048416:	68 08 00 00 00       	push   0x8
+ 804841b:	e9 d0 ff ff ff       	jmp    0x80483f0
+ 8048420:	ff 25 64 99 04 08    	jmp    DWORD PTR ds:0x8049964
+ 8048426:	68 10 00 00 00       	push   0x10
+ 804842b:	e9 c0 ff ff ff       	jmp    0x80483f0
+ 8048430:	ff 25 68 99 04 08    	jmp    DWORD PTR ds:0x8049968
+ 8048436:	68 18 00 00 00       	push   0x18
+ 804843b:	e9 b0 ff ff ff       	jmp    0x80483f0
+ 8048440:	ff 25 6c 99 04 08    	jmp    DWORD PTR ds:0x804996c
+ 8048446:	68 00 00 00 00       	push   0x0
+ 804844b:	e9 a0 ff ff ff       	jmp    0x80483f0
+ 8048450:	ff 25 70 99 04 08    	jmp    DWORD PTR ds:0x8049970
+ 8048456:	68 28 00 00 00       	push   0x28
+ 804845b:	e9 90 ff ff ff       	jmp    0x80483f0
+ 8048460:	ff 25 74 99 04 08    	jmp    DWORD PTR ds:0x8049974
+ 8048466:	68 30 00 00 00       	push   0x30
+ 804846b:	e9 80 ff ff ff       	jmp    0x80483f0
+ 8048470:	ff 25 78 99 04 08    	jmp    DWORD PTR ds:0x8049978
+ 8048476:	68 38 00 00 00       	push   0x38
+ 804847b:	e9 70 ff ff ff       	jmp    0x80483f0
+ 8048480:	ff 25 7c 99 04 08    	jmp    DWORD PTR ds:0x804997c
+ 8048486:	68 40 00 00 00       	push   0x40
+ 804848b:	e9 60 ff ff ff       	jmp    0x80483f0
+ 8048490:	ff 25 80 99 04 08    	jmp    DWORD PTR ds:0x8049980
+ 8048496:	68 48 00 00 00       	push   0x48
+ 804849b:	e9 50 ff ff ff       	jmp    0x80483f0
+ 80484a0:	31 ed                	xor    ebp,ebp
+
+# main
+ 80485b5:	55                   	push   ebp
+ 80485b6:	89 e5                	mov    ebp,esp
+ 80485b8:	57                   	push   edi
+ 80485b9:	51                   	push   ecx
+ 80485ba:	81 ec 00 04 00 00    	sub    esp,0x400
+ 80485c0:	8d 95 f8 fb ff ff    	lea    edx,[ebp-0x408]
+ 80485c6:	b8 00 00 00 00       	mov    eax,0x0
+ 80485cb:	b9 00 01 00 00       	mov    ecx,0x100
+ 80485d0:	89 d7                	mov    edi,edx
+ 80485d2:	f3 ab                	rep stos DWORD PTR es:[edi],eax
+ 80485d4:	a1 a0 99 04 08       	mov    eax,ds:0x80499a0
+ 80485d9:	6a 00                	push   0x0
+ 80485db:	6a 02                	push   0x2
+ 80485dd:	6a 00                	push   0x0
+ 80485df:	50                   	push   eax
+ 80485e0:	e8 ab fe ff ff       	call   0x8048490 #setvbuf
+
+ 80485e5:	83 c4 10             	add    esp,0x10
+ 80485e8:	a1 c0 99 04 08       	mov    eax,ds:0x80499c0
+ 80485ed:	6a 00                	push   0x0
+ 80485ef:	6a 02                	push   0x2
+ 80485f1:	6a 00                	push   0x0
+ 80485f3:	50                   	push   eax
+ 80485f4:	e8 97 fe ff ff       	call   0x8048490 #setvbuf
+
+ 80485f9:	83 c4 10             	add    esp,0x10
+ 80485fc:	83 ec 08             	sub    esp,0x8
+ 80485ff:	68 9b 85 04 08       	push   0x804859b
+ 8048604:	6a 0e                	push   0xe
+ 8048606:	e8 25 fe ff ff       	call   0x8048430 # signal
+
+ 804860b:	83 c4 10             	add    esp,0x10
+ 804860e:	83 ec 0c             	sub    esp,0xc
+ 8048611:	6a 3c                	push   0x3c
+ 8048613:	e8 28 fe ff ff       	call   0x8048440 #alarm
+
+ 8048618:	83 c4 10             	add    esp,0x10
+ 804861b:	a1 a0 99 04 08       	mov    eax,ds:0x80499a0
+ 8048620:	83 ec 04             	sub    esp,0x4
+ 8048623:	50                   	push   eax
+ 8048624:	68 00 04 00 00       	push   0x400
+ 8048629:	8d 85 f8 fb ff ff    	lea    eax,[ebp-0x408]
+ 804862f:	50                   	push   eax
+ 8048630:	e8 eb fd ff ff       	call   0x8048420 #fgets
+
+ 8048635:	83 c4 10             	add    esp,0x10
+ 8048638:	85 c0                	test   eax,eax
+ 804863a:	75 07                	jne    0x8048643
+ 804863c:	b8 01 00 00 00       	mov    eax,0x1
+ 8048641:	eb 48                	jmp    0x804868b =>
+ 8048643:	83 ec 0c             	sub    esp,0xc
+ 8048646:	8d 85 f8 fb ff ff    	lea    eax,[ebp-0x408]
+ 804864c:	50                   	push   eax
+ 804864d:	e8 1e fe ff ff       	call   0x8048470 # strlen
+
+ 8048652:	83 c4 10             	add    esp,0x10
+ 8048655:	83 ec 08             	sub    esp,0x8
+ 8048658:	50                   	push   eax
+ 8048659:	68 30 87 04 08       	push   0x8048730 # Printing %d bytes
+ 804865e:	e8 9d fd ff ff       	call   0x8048400 # printf
+
+ 8048663:	83 c4 10             	add    esp,0x10
+ 8048666:	83 ec 0c             	sub    esp,0xc
+ 8048669:	8d 85 f8 fb ff ff    	lea    eax,[ebp-0x408]
+ 804866f:	50                   	push   eax
+ 8048670:	e8 8b fd ff ff       	call   0x8048400 # printf
+
+ 8048675:	83 c4 10             	add    esp,0x10
+ 8048678:	a1 c0 99 04 08       	mov    eax,ds:0x80499c0
+ 804867d:	83 ec 0c             	sub    esp,0xc
+ 8048680:	50                   	push   eax
+ 8048681:	e8 8a fd ff ff       	call   0x8048410 # fflush
+
+ 8048686:	83 c4 10             	add    esp,0x10
+ 8048689:	eb 90                	jmp    0x804861b
+ 804868b:	8d 65 f8             	lea    esp,[ebp-0x8]
+ 804868e:	59                   	pop    ecx
+ 804868f:	5f                   	pop    edi
+ 8048690:	5d                   	pop    ebp
+ 8048691:	8d 61 fc             	lea    esp,[ecx-0x4]
+ 8048694:	c3                   	ret    
