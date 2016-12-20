@@ -10,6 +10,6 @@ I hadn't noticed it before, I don't know why but I couldn't solve my problem wit
 
 Problem solved without any further ado.
 
-![scr1.png](scr1.png)
+![snake.png](snake.png)
 
 Seems easy, right? :D
