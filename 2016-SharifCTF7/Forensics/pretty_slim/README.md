@@ -33,8 +33,8 @@ $ hexdump -C flaggggg| head -2
 00000010  09 66 6c 61 67 67 67 67  67 0d 0a 1a 0c 00 7b 00  |.flaggggg.....{.|
 ```
 
-KGB is not so sensitive to size of file in it's header (inner file size before decompress)
-we put that 359 and it worked, nor we should bruteforce it
+KGB is not sensitive to the size of file in its header (inner file size before decompression)
+We set it to 359 and it worked so no need to bruteforce it
 
 ```
 $ vbindiff flaggggg flaggggg_fixed_kgb 
