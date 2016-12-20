@@ -144,7 +144,6 @@ As a consequence, we sent our payload to admin and waited for his sign:
 content=148&id=eyJ0ZWFtaWQiOiI2MCJ9LjFjSVc5aC5CcGxnYnprcjVUY3BHeGlnaDQ4UjhfRzgyODQ%3D&url=http%3A%2F%2Fctf.sharif.edu%3A8083%2Fwait_and_real_sign.php%3Fid%3DeyJ0ZWFtaWQiOiI2MCJ9LjFjSVc5aC5CcGxnYnprcjVUY3BHeGlnaDQ4UjhfRzgyODQ%3D%27%2f%2f%5c%26content%3D148
 ---
 ```
-
-//Voorivex
-https://twitter.com/yshahinzadeh
 The admin signed our data, we entered it and grabbed the flag :)
+
+https://twitter.com/yshahinzadeh
