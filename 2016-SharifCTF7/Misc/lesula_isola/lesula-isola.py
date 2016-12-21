@@ -148,3 +148,4 @@ while(True):
         print(stat)
         analyse_him(False, q, strOf(int(ans), options), stat)
         ready = True
+            
