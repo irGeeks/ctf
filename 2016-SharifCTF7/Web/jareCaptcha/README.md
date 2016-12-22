@@ -6,7 +6,7 @@ Can you solve some sudoku challenges?
 
 ##Solution
 
-In this challenge we are given a webpage with a sudoku table that we should solve and a captcha to protect page from being brute-forced.
+In this challenge we are given a webpage with a sudoku table that we should solve. Also a captcha to protect page from being brute-forced.
 Requested task is to solve the sudoku for 200 times and submit our results to get the flag.
 Viewing source code of challenge, we will see that there is a javascript code for rendering sudoku table in client-side.
 
@@ -40,10 +40,10 @@ function sudoku(w){
 }
 ```
 
-Looking at javascript source we see that there is a variable named "str" that have the sudoko table's field values each time the page renders.
+Looking at javascript source we see that there is a variable named "str" that have the sudoko table's field values each time the page loads.
 So the task is clear. we should first send a request to server, receive this value, solve this sudoku having "str" variable value and then send our result with captcha value.
 But the tricky point is the captcha. Cause it's a little hard to crack this captcha each time.
-Thanks to my teamtames that notices once a captcha is created for our session, we can access to it's value everytime we send a request with our session parameters.
+Thanks to my teamtames that noticed once a captcha is created for our session, we can access to it's value everytime we send a request with our session parameters.
 It means that if we send a request to "http://ctf.sharif.edu:8084/jarecap?pool=images/&(\d*)" to generate a new captcha, We can send the value of this captcha
 for unlimited times if we send requests with our session.
 

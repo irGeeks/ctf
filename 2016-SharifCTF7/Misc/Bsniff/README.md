@@ -6,12 +6,12 @@ To find the flag, reconstruct what the user was actually looking for.
 
 ##Solution
 
-This challenge is more steganography & sort of a covert challenge!
-In this task we are given a .pcap file which is a captured file of a network traffic that is trying to send flag throught
-an hidden channel whithin url requests to blockchain.info website.
+This challenge is more steganography and task is to find the covert-channel.
+For this task we are given a .pcap file which is a captured file of a network traffic that is trying to send flag through
+a hidden channel whithin url requests to blockchain.info website.
 
-Looking at .pcap file using wireshark, i noticed that there are strange requests to "blockchain.info/q/addressbalance/".
-Looks like some Base64 encoded like data had been transfered throught this requests. "Follow tcp stream" on each of these request streams will give us something like below:
+Looking at .pcap file using wireshark, we noticed that there are strange requests to "blockchain.info/q/addressbalance/".
+Looks like some Base64 encoded like data had been transfered through this requests. "Follow tcp stream" on each of these request streams will give us something like below:
 
 ```
 GET /q/addressbalance/1KBtNgrukDEDiWjrqirzqeiSTL77zLFrVL?confirmations=6 HTTP/1.1
@@ -25,6 +25,8 @@ User-Agent: python-requests/2.4.3 CPython/2.7.9 Linux/3.16.0-4-amd64
 At first we thought that these data is base64 encoded and a file or something is transfered by this characters. so i tried to put them together to get some file as result, but impossible.
 After wasting a lot of time on finding out how to solve this challenge, By the help of my teammates we noticed that
 some characters are not send throught this urls and There are 41 '?' signs in requests which mean 41 characters are missing.
+
+complete list of these strings is as below:
 
 ```
 1FbACt9mRncgM2JAButUJerYhpQkN9?bcV
@@ -73,14 +75,14 @@ some characters are not send throught this urls and There are 41 '?' signs in re
 Now the problem was how to find these values.
 But again we noticed that if we send that request again to "blockchain.info/q/addressbalance/", we might get usefull data.
 Cause when the request is not correct we will get responses like "checksum not valid", but if the request is correct it returns an integer value instead.
-So again the task was clear, we should brute these requests to get the right value. Doing this will give us this character sequence:
+So now the task was clear, we should brute these requests to get the right value. Doing this will give us this character sequence:
 
 ```
 be6ai1ed31a1fb718r18efeFe627Sb2ec5d39dhTC
 ```
 
-Looking at this string, we will notice that we have all needed characters for SharifCTF which represent the flag. But the position of characters is wrong.
-So i save the position of occurence of each character in each url request of .pcap file. (Again thanks to my teammate for finding out this tricky tip)
+Looking at this string, we noticed that we have all needed characters for SharifCTF which represent the flag. But the position of characters is wrong.
+So i save the occurence position of each character in each url's request of .pcap file. (Again thanks to my teammate for finding out this tricky tip)
 
 ```python
 {1: '8S', 2: 'fh', 3: 'ae', 4: '8r', 5: 'i1', 6: '1f', 7: 'dC', 8: '5T', 9: '7F', 10: '9', 11: '3', 12: '2', 13: 'd', 14: 'b', 15: 'e', 16: 'e', 17: '1', 18: 'b', 19: '1', 20: '2', 21: 'd', 22: 'e', 23: '3', 24: 'e', 25: 'a', 26: '7', 27: 'e', 28: '1', 29: 'c', 30: 'b', 31: '6', 32: '6'}
