@@ -33,7 +33,8 @@ require_once('footer.php');
 ?>
 ```
 Login.php
-```<?php
+```
+<?php
 
 session_start();
 
@@ -103,7 +104,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')
 require_once('footer.php');
 ```
 deleted_3d5d9c1910e7c7/flag.php
-```<?php
+```
+<?php
 
 $username = 'Cuchulainn';
 $password = ;	// Oi don't save me bleedin password in a shithole loike dis.
