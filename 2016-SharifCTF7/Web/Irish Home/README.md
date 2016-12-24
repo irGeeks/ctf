@@ -122,7 +122,8 @@ echo $flag;
 
 Based on flag.php, admin password was required to make flag. In other hand, login.php had `Blind SQL Injection`. Exploit code:
 
-```<?php
+```
+<?php
 
 function gPrint($message = 'test', $times=1){
         echo '[' . date("d/m/Y H:i:s").'] ' . $message . str_repeat("\n", $times);
