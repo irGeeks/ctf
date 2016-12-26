@@ -22,6 +22,8 @@
   [Synced 150](Forensics/synced)
   
   [Bsniff 200](Forensics/Bsniff)
+  
+  [Strange PDF 150](Forensics/Bsniff)
 
 * **Misc**
 
@@ -57,8 +59,20 @@
   
   [Unloadme 200](Reverse/unloadme)
   
+  [Getit 50](Reverse/getit)
+  
+  [RepairMe 100](Reverse/repairme)
+  
+  [SCrack 150](Reverse/scrack)
+  
+  [Nanomites 300](Reverse/nanomites)
+
 * **Web**
 
   [Extra Security 300](Web/Extra%20Security)
 
   [jareCaptcha 200](Web/jareCaptcha)
+  
+  [CBPM 300](Web/cbpm)
+  
+  [Irish Home 200](Web/Irish%20Home)
