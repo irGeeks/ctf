@@ -10,6 +10,17 @@ And the other thing was plain-text of encrypted data which it was  too simple to
 
 ![snapshot-2.png](snapshot-2.png)
 
+``` python
+encrypted = [0x12, 0x2E, 0x2F, 0x35, 0x19, 0x0F, 0x35, 0x19, 0x12, 0x2E, 0x23, 0x19, 0x15, 0x23, 0x25, 0x34, 0x23, 0x32, 0x19, 0x02, 0x27, 0x32, 0x27, 0x46]
+secret = [chr(x ^ 0x46) for x in encrypted]
+print ''.join(secret)
+```
+The secret:
+
+```
+This_Is_The_Secret_Data
+```
+
 OK, so after the competitions ended, I spent my free time on this to fix `Nanomites` which never completed but for those who want to continue, you have to disable ASLR, then you need to fix CRC check following this sequence of bytes:
 
 ```
