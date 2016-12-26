@@ -25,7 +25,9 @@ Change it to `EBFE` which means jump to itself, hence making a loop. Later you c
 ![snapshot-3.png](snapshot-3.png)
 
 1) Offset
+
 2) Branch type
+
 3) Destination
 
 In offset+0x401000 you can find int3 instructions which needs to be fixed, destination+(number of opcodes of offset) is the correct path to jump, and the branch types operation can find at `0041E300`; find the rest by continue tracing...
