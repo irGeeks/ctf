@@ -7,7 +7,11 @@
   
   [Lobotomized LSB Oracle 400](Crypto/lobotomized_lsb_oracle)
   
-  [LSB Oracle 150 ](Crypto/lsb_oracle)
+  [LSB Oracle 150](Crypto/lsb_oracle)
+
+  [TPQ 150](Crypto/TPQ)
+
+  [XOR 150](Crypto/XOR)
   
 * **Forensics**
 
@@ -15,8 +19,10 @@
   
   [Pretty Slim 200](Forensics/pretty_slim)
   
-  [Synced 150 ](Forensics/synced)
+  [Synced 150](Forensics/synced)
   
+  [Bsniff 200](Forensics/Bsniff)
+
 * **Misc**
 
   [Camera Model 100](Misc/camera_model)
@@ -28,6 +34,8 @@
   [Lost Voice 150](Misc/lost_voice)
   
   [What is hidden? 300](Misc/what_is_hidden)
+
+  [Playfake 50](Misc/Playfake)
   
 * **Pwn**
 
@@ -52,3 +60,5 @@
 * **Web**
 
   [Extra Security 300](Web/Extra%20Security)
+
+  [jareCaptcha 200](Web/jareCaptcha)

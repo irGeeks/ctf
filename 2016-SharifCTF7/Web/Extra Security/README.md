@@ -1,4 +1,4 @@
-# CBPM (web 300)
+# Extra Security (web 300)
 
 The participants were given an online portal which had several parts.
 Sign by Yourself (users could sign any data with a key)
@@ -6,11 +6,11 @@ See List of Signatures (The list of user’s signed data were shown)
 Sign by Administrator (Sending any data to admin to sign)
 Get the flag (getting flag by proper admin sign)
 After spending some time on the task, we realized the workflow. The important consequences:
-1. Signing could not possible due to JavaScript snippet code.
-2. By removing JavaScript code manually, the code signing was possible.
-3. Admin signed everything, but the results were not shown to the users.
-4. The question asked participant to sign their team number by admin.
-5. The signing KEY was stored in cookie without HttpOnly flag.
++ Signing could not possible due to JavaScript snippet code.
++ By removing JavaScript code manually, the code signing was possible.
++ Admin signed everything, but the results were not shown to the users.
++ The question asked participant to sign their team number by admin.
++ The signing KEY was stored in cookie without HttpOnly flag.
 Attack scenario: In the beginning, we tried to find a XSS vulnerability. By leveraging XSS, it could possible to force admin send their KEY to us, but after some test we were not able to exploit admin blindly. So after some time, we realized that workflow had a problem:
 
 When a user wanted to sign a data, following request was sent:
