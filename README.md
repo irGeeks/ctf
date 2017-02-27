@@ -1,6 +1,6 @@
 # irGeeks writeups
 
-* [**SBoston Key Party 2017**](2017-BostonKeyParty)
+* [**Boston Key Party 2017**](2017-BostonKeyParty)
 
 * [**CodeGate 2017**](2016-CodeGate)
 
