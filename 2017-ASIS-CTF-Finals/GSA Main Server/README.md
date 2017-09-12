@@ -156,7 +156,7 @@ RewriteRule ^.*$ index.php [L]
 Revealing two new hosts (next questions), and some hidden path such as `notConfirmedInformation/` and etc. `infoSubmit/` path allowed to insert new information and `notConfirmedInformation/` allowed to see the information submitted. After some strugling at this stage, I found that `notConfirmedInformation/{id}` was prone to MySQL injection. However, the injection was tricky because as I deduced:
 
 + There was two query, first loads the page and second upgrades the view number.
-+ The first one was totally secures, the second one had injection though. **The SQLi test was easy**
++ The first one was totally secured, the second one had injection though. **The SQLi test was easy**
 + The WAF was annoying, it blocked queries had some keywords such as `union` and replaced some characters such as `space`
 
 ###### SQLi test:
