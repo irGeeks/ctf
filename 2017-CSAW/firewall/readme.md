@@ -21,9 +21,9 @@ After reading the binary we can summerize the tasks:
 	8. Exit
 
 Size of each rule is `29` and we can create up to `16` rules.  
-`[byte:enable | char[20]:name | int:port | char[4]:type`  
+`[byte:enable | char[20]:name | int:port | char[4]:type]`  
 
-[token.py](token.py) generates valid token (Also you can read it from memory).]
+[token.py](token.py) generates valid token (Also you can read it from memory).
 
 ## vuln #1
 
