@@ -8,4 +8,4 @@
 
 * [**ASIS CTF Finals 2017**](2017-ASIS-CTF-Finals)
 
-* [**CSAW 2017**](2017 - CSAW)
+* [**CSAW 2017**](2017-CSAW)
