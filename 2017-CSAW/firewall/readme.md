@@ -4,7 +4,7 @@ firewall was a pwn challenge prepared to run under windows (POSIX support).
 First of all we enable *Unix-subsystem* in the windows features which can be accessed from CP->Programs->Turn on ...(Please make sure you have Enterprise or Ultimate version of win!).
 Then we need [this file](https://download.microsoft.com/download/6/2/1/6214608E-1A46-43DA-BEF4-B1A575F7CD26/Utilities%20and%20SDK%20for%20Subsystem%20for%20UNIX-based%20Applications_AMD64.exe) to run and then debug the exe.
 
-##Analysing:
+## Analysing:
 
 After reading the binary we can summerize the tasks:
 
@@ -23,7 +23,7 @@ After reading the binary we can summerize the tasks:
 Size of each rule is `29` and we can create up to `16` rules.  
 `[byte:enable | char[20]:name | int:port | char[4]:type`  
 
-[token.py](token.py) generates valid token (Also you can read it from memory).
+[token.py](token.py) generates valid token (Also you can read it from memory).]
 
 ## vuln #1
 
@@ -47,4 +47,4 @@ Then we can use `edit_rule` with `idx = 0` to overwrite the table with address o
 
 The flag is `flag{w3_f3ll_pr3tty_f4r_d0wn_th3_w1nd0ws_r4bb1t_h0le_huh}`.
 
-You can see full exploit [here](firewall_sol.py).
+You can see full exploit [here](sol.py).
